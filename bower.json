@@ -23,6 +23,7 @@
     "angular": "^1.6.1",
     "bootstrap": "^3.3.7",
     "bootswatch-dist": "superhero",
-    "angular-ui-router": "^0.3.2"
+    "angular-ui-router": "^0.3.2",
+    "toastr": "^2.1.3"
   }
 }
