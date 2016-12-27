@@ -20,9 +20,9 @@
     "tests"
   ],
   "dependencies": {
-    "angular-route": "^1.6.1",
     "angular": "^1.6.1",
     "bootstrap": "^3.3.7",
-    "bootswatch-dist": "superhero"
+    "bootswatch-dist": "superhero",
+    "angular-ui-router": "^0.3.2"
   }
 }
