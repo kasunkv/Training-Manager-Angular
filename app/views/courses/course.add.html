@@ -1,1 +1,47 @@
-<h2>{{ message }}</h2>
+<h3>Add Course</h3>
+<br /><br />
+<form class="form-horizontal" name="addCourseForm" _lpchecked="1">
+    <fieldset>
+        <div class="form-group">
+            <label for="inputTitle" class="col-lg-2 control-label">Course Title</label>
+            <div class="col-lg-8">
+                <input type="text" ng-model="newCourse.title" name="title" class="form-control" id="inputTitle" placeholder="Course Title" autocomplete="off" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputDescription" class="col-lg-2 control-label">Description</label>
+            <div class="col-lg-8">
+                <textarea class="form-control" ng-model="newCourse.description" name="description" rows="3" id="inputDescription" placeholder="Course Description" required></textarea>
+                <span class="help-block">Detailed description of the new course.</span>
+            </div>
+        </div>       
+        <div class="form-group">
+            <label for="inputAuthor" class="col-lg-2 control-label">Author</label>
+            <div class="col-lg-4">
+                <select class="form-control" ng-model="newCourse.author" name="author" id="inputAuthor" required>
+                    <option>Pluralsight</option>
+                    <option>Lynda.com</option>
+                    <option>Udemy</option>
+                    <option>CodeSchool</option>
+                    <option>TutsPlus</option>
+                    <option>Udacity</option>
+                    <option>Egghead.io</option>
+                    <option>LevelUpTuts</option>
+                    <option>Microsoft Virtual Academy</option>
+                </select>                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputTags" class="col-lg-2 control-label">Tags</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" ng-model="newCourse.tags" name="tags" id="inputTags" placeholder="Eg. ASP, C#, Java" autocomplete="off" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-8 col-lg-offset-2">
+                <button type="reset" class="btn btn-link" ng-click="cancel()">Cancel</button>
+                <button type="submit" class="btn btn-primary pull-right" ng-click="insert()" ng-disabled="addCourseForm.$pristine">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
