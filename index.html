@@ -3,57 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Training Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./app/libs/bootswatch-dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="./app/img/icon.png">
 </head>
 <body ng-app="trainingManager">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Training Manager</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Courses <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Add Course</a></li>
-                            <!--<li class="divider"></li>-->
-                            <li><a href="#">In Progress Courses</a></li>
-                            <li><a href="#">Completed Courses</a></li>                        
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Lists <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">New List</a></li>
-                            <li><a href="#">All Lists</a></li>                     
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Include The Navigation -->
+    <div ng-include="'./app/views/nav.html'"></div>
     
+    <!-- App Content -->
+    <div class="content">
+        <ui-view></ui-view>
+    </div>
+
     <!-- Libs -->
     <script src="./app/libs/jquery/dist/jquery.min.js"></script>
     <script src="./app/libs/angular/angular.min.js"></script>
-    <script src="./app/libs/angular-route/angular-route.min.js"></script>
+    <script src="./app/libs/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="./app/libs/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- App -->
     <script src="./app/app.js"></script>
     <!-- Controllers -->
-    <script src="./app/controllers/"></script>
+    <script src="./app/controllers/homeController.js"></script>
+    <script src="./app/controllers/courseController.js"></script>
 
     <!-- Services -->
-    <script src="./app/services/"></script>
+    <!--<script src="./app/services/"></script>-->
 </body>
 </html>
