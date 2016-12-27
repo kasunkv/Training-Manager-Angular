@@ -14,6 +14,10 @@
                 controller: 'HomeController',
                 templateUrl: './app/views/home.html'
             })
+            .state('about', {
+                url: '/about',
+                templateUrl: './app/views/about.html'
+            })
             // Courses Routes
             .state('courses', {
                 url: '/courses',
