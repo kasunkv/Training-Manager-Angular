@@ -2,8 +2,12 @@
     'use strict';
 
     angular
-        .module('trainingManager', ['ui.router'])
-        .config(configuration);
+        .module('trainingManager', ['ui.router', 'trainingManager.factories'])
+        .config(configuration)
+        .constant('appConfig', {
+            API_URL: 'http://localhost:8081/api/'
+        });
+        
     
     configuration.$inject = ['$stateProvider'];
 
@@ -65,5 +69,5 @@
                     templateUrl: './app/views/lists/lists.completed.html',
                     controller: 'ListsController'
                 });
-    }    
+    }
 })();
