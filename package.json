@@ -1,0 +1,24 @@
+{
+  "name": "training-manager-angular",
+  "version": "1.0.0",
+  "description": "Training Manager application created using Angular.js to manage learning activities for individuals.",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasunkv/Training-Manager-Angular.git"
+  },
+  "keywords": [
+    "training",
+    "management",
+    "angular"
+  ],
+  "author": "Kasun Kodagoda <kvkrusl@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kasunkv/Training-Manager-Angular/issues"
+  },
+  "homepage": "https://github.com/kasunkv/Training-Manager-Angular#readme"
+}
