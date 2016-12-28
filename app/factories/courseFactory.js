@@ -21,6 +21,12 @@
                     .get(url + 'courses/')
                     .then(successHandler)
                     .catch(errorHandler);
+            },
+            updateCourse: function (courseId, course, successHandler, errorHandler) {
+                $http
+                    .put(url + 'courses/' + courseId, course)
+                    .then(successHandler)
+                    .catch(errorHandler);
             }
         };
     }
