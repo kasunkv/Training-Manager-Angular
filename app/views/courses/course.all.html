@@ -1,13 +1,12 @@
 <div class="row">
     <div class="col-md-12">
         <div class="list-group">
-            <a href="#" class="list-group-item" ng-repeat="course in allCourses" style="border: 1px solid rgba(0, 0, 0, 0.2)">
+            <a ui-sref="courses.details({courseId: course._id })" class="list-group-item" ng-repeat="course in allCourses" style="border: 1px solid rgba(0, 0, 0, 0.2)">
                 <div class="row">
                     <div class="col-md-9">
-                        <h2 class="list-group-item-heading">{{ course.title }}</h2>
-                        <p class="lead">{{ course.author }}</p>
-                        <p class="list-group-item-text">{{ course.description }}</p>
-                        
+                        <h3 class="list-group-item-heading">{{ course.title }}</h3>
+                        <p class="lead" style="font-size: 20px;">{{ course.author }}</p>
+                        <p class="list-group-item-text" style="margin-top: -20px; font-weight: lighter; padding-bottom: 5px;">{{ course.description }}</p>                            
                         <span class="label label-info" ng-repeat="tag in course.tags" style="margin-right: 5px;">{{ tag }} </span>
                     </div>
                     <div class="col-md-3">
