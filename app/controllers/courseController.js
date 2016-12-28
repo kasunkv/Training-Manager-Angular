@@ -5,14 +5,28 @@
         .module('trainingManager')
         .controller('CourseController', courseController);
     
-    courseController.$inject = ['$scope', '$state', 'courseFactory' ];
+    courseController.$inject = ['$scope', '$state', 'courseFactory', 'notifyFactory', 'allCourses'];
 
-    function courseController($scope, $state, courseFactory) {
+    function courseController($scope, $state, courseFactory, notifyFactory, allCourses) {
         $scope.newCourse = {};
+        $scope.allCourses = allCourses;
+
+        var notify = notifyFactory;
+
+        $scope.loadCourses = function () {
+            courseFactory.getCourses(
+                function (response, status) {
+                    $scope.allCourses = response.data;
+                    console.log(allCourses);
+                },
+                function (error) {
+                    notifyFactory.error('Failed to load courses.');
+                });
+        };
 
         $scope.cancel = function () {
             $state.go('courses.all');
-        }
+        };
 
         $scope.insert = function () {
             // Call the API with the course data

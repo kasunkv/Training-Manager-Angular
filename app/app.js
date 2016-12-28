@@ -27,26 +27,56 @@
                 url: '/courses',
                 abstract: true,
                 templateUrl: './app/views/courses/course.html'
-            })
+            })                
                 .state('courses.all', {
                     url: '/all',
                     templateUrl: './app/views/courses/course.all.html',
-                    controller: 'CourseController'
+                    controller: 'CourseController',
+                    resolve: {
+                        allCourses: function ($http) {
+                            return $http
+                                .get('http://localhost:8081/api/courses')
+                                .then(function (response, status) {
+                                    return response.data;
+                                });
+                        }
+                    }
                 })
                 .state('courses.add', {
                     url: '/add',
                     templateUrl: './app/views/courses/course.add.html',
-                    controller: 'CourseController'
+                    controller: 'CourseController',
+                    resolve: {
+                        allCourses: function () { return null; }
+                    }
                 })
                 .state('courses.inprogress', {
                     url: '/inprogress',
                     templateUrl: './app/views/courses/course.inprogress.html',
-                    controller: 'CourseController'
+                    controller: 'CourseController',
+                    resolve: {
+                        allCourses: function ($http) {
+                            return $http
+                                .get('http://localhost:8081/api/courses')
+                                .then(function (response, status) {
+                                    return response.data;
+                                });
+                        }
+                    }
                 })
                 .state('courses.completed', {
                     url: '/completed',
                     templateUrl: './app/views/courses/course.completed.html',
-                    controller: 'CourseController'
+                    controller: 'CourseController',
+                    resolve: {
+                        allCourses: function ($http) {
+                            return $http
+                                .get('http://localhost:8081/api/courses')
+                                .then(function (response, status) {
+                                    return response.data;
+                                });
+                        }
+                    }
                 })
             // Lists Routes
             .state('lists', {
