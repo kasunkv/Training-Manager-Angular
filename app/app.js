@@ -42,6 +42,23 @@
                         }
                     }
                 })
+                .state('courses.details', {
+                    url: '/details/:courseId',
+                    templateUrl: './app/views/courses/course.details.html',
+                    controller: function ($scope, course) {
+                        $scope.course = course;
+                    },
+                    resolve: {
+                        allCourses: function () { return null; },
+                        course: function ($http, $stateParams) {
+                            return $http
+                                .get('http://localhost:8081/api/courses/' + $stateParams.courseId)
+                                .then(function (response, status) {
+                                    return response.data;
+                                });
+                        }
+                    }
+                })
                 .state('courses.add', {
                     url: '/add',
                     templateUrl: './app/views/courses/course.add.html',
