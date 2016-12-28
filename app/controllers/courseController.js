@@ -22,13 +22,14 @@
             courseFactory.addCourse(
                 $scope.newCourse,
                 function (response, status) {
-                    console.log('success');
-                    $state.go('courses.all');                    
+                    notify.success('Course Created Successfully.');
+                    $state.go('courses.all');
                 },
                 function (error) {
+                    notify.error('Failed to Create Course');
                     console.error(error);
                 });
-        }
+        };
     }
 
 })();
