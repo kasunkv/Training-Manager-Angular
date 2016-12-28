@@ -15,6 +15,12 @@
                     .post(url + 'courses/', course)
                     .then(successHandler)
                     .catch(errorHandler);
+            },
+            getCourses: function (successHandler, errorHandler) {
+                $http
+                    .get(url + 'courses/')
+                    .then(successHandler)
+                    .catch(errorHandler);
             }
         };
     }
