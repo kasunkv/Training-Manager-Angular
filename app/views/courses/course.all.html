@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="list-group">
+            <a href="#" class="list-group-item" ng-repeat="course in allCourses" style="border: 1px solid rgba(0, 0, 0, 0.2)">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h2 class="list-group-item-heading">{{ course.title }}</h2>
+                        <p class="lead">{{ course.author }}</p>
+                        <p class="list-group-item-text">{{ course.description }}</p>
+                        
+                        <span class="label label-info" ng-repeat="tag in course.tags" style="margin-right: 5px;">{{ tag }} </span>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="pull-right">
+                            <button class="btn btn-success btn-md">Edit</button>
+                            <button class="btn btn-danger btn-md">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
