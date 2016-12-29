@@ -31,7 +31,7 @@
         $scope.insert = function () {
             // Call the API with the course data
             var tags = $scope.newCourse.tags;
-            $scope.newCourse.tags = tags.split(', ');
+            $scope.newCourse.tags = tags.split(',');
 
             courseFactory.addCourse(
                 $scope.newCourse,
