@@ -42,6 +42,45 @@
                         }
                     }
                 })
+                .state('courses.edit', {
+                    url: '/edit/:courseId',
+                    templateUrl: './app/views/courses/course.edit.html',
+                    controller: function ($scope, $state, courseFactory, notifyFactory, course) {
+                        $scope.course = course;
+                        var notify = notifyFactory;
+
+                        $scope.update = function () {
+                            var tags = $scope.course.tags[0];
+                            $scope.course.tags = tags.split(',');
+
+                            courseFactory.updateCourse(
+                                $scope.course._id,
+                                $scope.course,
+                                function (response, status) {
+                                    notify.success('Course Updated Successfully.');
+                                    $state.go('courses.all');
+                                },
+                                function (error) {
+                                    notify.error('Failed to Update Course');
+                                    console.error(error);
+                                });
+                        }
+
+                        $scope.cancel = function () {
+                            $state.go('courses.all');
+                        };
+                    },
+                    resolve: {
+                        allCourses: function () { return null; },
+                        course: function ($http, $stateParams) {
+                            return $http
+                                .get('http://localhost:8081/api/courses/' + $stateParams.courseId)
+                                .then(function (response, status) {
+                                    return response.data;
+                                });
+                        }
+                    }
+                })
                 .state('courses.details', {
                     url: '/details/:courseId',
                     templateUrl: './app/views/courses/course.details.html',
